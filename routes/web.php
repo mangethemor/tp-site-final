@@ -22,6 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
@@ -48,3 +49,8 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::post('/{comment}', [ReplyController::class, 'store'])->name('store');
 	});
 });
+=======
+Route::get('/tarifs', function () {
+    return view('tarifs');
+});
+>>>>>>> c7037cd1f656b6690e887607d1bc0279800521c4
