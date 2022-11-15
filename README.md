@@ -120,6 +120,28 @@ avec *models*, *migrations*, *controllers* pour adapter le projet à un schéma 
 
 3- Créer un système d'authentification pour le site  
 Par la commande *breeze*   
+
+4- Création des routes sur le fichier web.php  
+
+5- Création des vues  
+. home.blade.php      
+. main.blade.php    
+. create.blade.php    
+. edit.blade.php     
+. show.blade.php    
+. post.blade.php  
+. add_comment.blade.php   
+. add_reply.blade.php    
+. comments.blade.php    
+. create_post.blade.php     
+. edit_post.blade.php      
+. replies.blade.php     
+
+6- Création des controllers  
+. PostController.php    
+. CommentController.php   
+. ReplyController.php  
+. HomeController.php  
 <br>
 
 #### Côté front-end
@@ -149,8 +171,8 @@ git branch front-end
 
 #### Côté back-office
 -----
-Difficulté à faire passer la commande *sail*. Résolu en mettant un alias qui pointe vers le fichier sail afin d'utiliser la fonction *sail* à l'instar de *./vendor/bin/sail*
-
+Difficulté à faire passer la commande *sail*. Résolu en mettant un alias qui pointe vers le fichier sail afin d'utiliser la fonction *sail* à l'instar de *./vendor/bin/sail*  
+Erreur sur le système d'authentification, résolue par relecture des fichiers de tables + installation de l'API breeze  
 <br>
 
 #### Côté front-end  
