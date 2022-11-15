@@ -1,11 +1,8 @@
 <?php
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ReplyController;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,32 +16,16 @@ use App\Http\Controllers\ReplyController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
-
-// group the following routes by auth middleware - you have to be signed-in to proceeed
-Route::group(['middleware' => 'auth'], function() {
-	// Dashboard
-	Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-	// Posts resourcefull controllers routes
-	Route::resource('posts', PostController::class);
-
-	// Comments routes
-	Route::group(['prefix' => '/comments', 'as' => 'comments.'], function() {
-        // store comment route
-		Route::post('/{post}', [CommentController::class, 'store'])->name('store');
-	});
-
-	// Replies routes
-	Route::group(['prefix' => '/replies', 'as' => 'replies.'], function() {
-        // store reply route
-		Route::post('/{comment}', [ReplyController::class, 'store'])->name('store');
-	});
-});
