@@ -1,66 +1,167 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+***
+# README
+***
+## Rôle de chacun dans le projet
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+### Chef de projet  
+Gregoire
 
-## About Laravel
+### Equipe back-office  
+Tifaine et Athithyan
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Equipe front-end  
+Daouda et Hadj  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+***
+## 1- Installation
+***
+### Installation LARAVEL (côté chef de projet)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pour installer LARAVEL ouvrir un terminal linux, où l'on peut entrer les commandes suivantes :  
+```sh
+curl -s https://laravel.build/example-app | bash
+```
+cette commande avec 'example-app' au nom du fichier que vous souhaitez  
 
-## Learning Laravel
+```sh
+cd example-app  
+./vendor/bin/sail up -d
+```
+cette commande permet de lancer LARAVEL (-d pour le lancer en arrière plan)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Gestion de projet par GitHub (côté back-office et front-end)
+Accepter l'invitation du projet *site_final* sur Github 
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Creation du projet (côté chef de projet)
+Sur la page d'accueil de GitHub, dans *start writing code*  
+sélectionner *en mode public* si on veut que tout le monde y est accès sur internet  
+sélectionner *en mode privé* si l'on veut selectionner les collaborateurs  
+puis cliquer sur *Create a new repository*
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+pour initialiser le projet taper dans un terminal la commande 
+```sh  
+git init
+```
+puis faire notre premier commit  
+```sh 
+git add -A
+git commit -m "First Commit"
+```
+### Clonage du projet (côté back-office et front-end)
 
-### Premium Partners
+depuis un terminal taper 
+```sh  
+cd Desktop/
+git clone https://github.com/nom_utilisateur_Git/nom_repository.git
+```
+cd Desktop, pour le placer sur le bureau. Si le colaborateurs veut le placer autrepart cette commande est à adapter selon le chemin
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Pour créer une branche et ainsi travailler dans un environnement sans risquer d'impacter la branche principale le collaborateur devra taper  
+```sh
+git branch <nom_de_la_branche>
+```
+Pour visualiser les différentes branches ou changer de branche taper respectivement  
+```sh 
+git branch
 
-## Contributing
+git checkout <nom_de_la_branche>
+```
+Lorsque la branche est validée on peut la fusionner avec la branche principale avec la commande  
+```sh
+git merge <nom_de_la_branche>
+```
+Pour télécharger le projet taper dans un nouveau terminal bash  
+```sh 
+git clone 
+``` 
+Chaque collaborateur aura besoin des commandes *pull* et *push* pour la mise en commun de leur travail. Taper dans le terminal    
+```sh
+git pull
+git add -A
+git commit -m 'message'
+git push
+``` 
+Télécharger l'outil *sail up* par *composer*  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Pour utiliser *composer* et télécharger la bibliothèque pour retrouver la fonction *sail up* taper dans le terminal ubuntu la commande   
+```sh
+docker run --rm --interactive --tty \--volume $PWD:/app \composer install  
+```
+Création des *models* avec les fichiers  *migration* et *controllers* utiliser la commande *artisan* dans un terminal  
 
-## Code of Conduct
+```sh
+./vendor/bin/sail up -d   
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'   
+sail php artisan make:model Post -mc   
+sail php artisan make:model Comment -mc   
+sail php artisan make:model Reply -mc    
+``` 
+Création d'un fichier *.env* à jour
+Créer un fichier *.env* dans la racine du dossier puis faire un copier coller du contenu de *.env.example* dans le dossier fraichement créé 
+***
+## 2- Compte rendu TP
+***
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Les différentes étapes de la réalisation du projet
 
-## Security Vulnerabilities
+<br>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Côté back-office
+-----
+1- Adapter le code html pour créer un blog minimaliste  
+avec *models*, *migrations*, *controllers* pour adapter le projet à un schéma de bdd  
 
-## License
+2- Créer un système d'authentification pour le site  
+Par la commande *breeze*   
+<br>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### Côté front-end
+-----
+1- Creation des fichiers :  
+. welcome.blade.php  
+. tarifs.blade.php  
+. head.blade.php  
+. contact.blade.php  
+
+2- Modification du fichiers web.php qui est dans /routes/web.php  
+
+3- création d'un dossier layouts  
+
+4- création et configuration du fichiers app.blade.php qui est dans layouts/blade.php 
+
+5- configuration du fichier *style.css* dans */public/css/style.css*
+
+
+### Les difficultés rencontrées et solutions apportées
+<br>
+
+#### Côté back-office
+-----
+difficulté à faire passer la commande *sail*. Résolu en mettant un alias qui pointe vers le fichier afin d'appeler directement avec sail au lieu de passer par *./vendor*
+
+<br>
+
+#### Côté front-end  
+----- 
+Problème de compatibilité de version de wsl. Solutions update de la version 1 à la version 2   
+Probleme avec la gestion des contenair, il fallait rajouter au debut et a la fin de chaque section ce code :  
+```sh
+extends('layouts.app')  
+section('content')  
+```
+et à la fin du code
+```sh  
+endsection  
+```
+<br>
+
+### Les sources des documentations/tutoriels/stackoverflow
+
+Pour l'update de version de wsl on a utilisé le lien  
+https://learn.microsoft.com/fr-fr/windows/wsl/install  
+
+Pour la mise en page du readme  
+https://www.ionos.fr/digitalguide/sites-internet/developpement-web/fichier-readme/  
+http://blog.ezoqc.com/comment-faire-un-bon-readme-md/  
