@@ -158,12 +158,12 @@ Difficulté à faire passer la commande *sail*. Résolu en mettant un alias qui 
 Problème de compatibilité de version de wsl. Solutions update de la version 1 à la version 2   
 Problème avec la gestion des contenairs, il fallait rajouter au début et à la fin de chaque section ce code :  
 ```sh
-extends('layouts.app')  
-section('content')  
+@extends('layouts.app')  
+@section('content')  
 ```
 et à la fin du code
 ```sh  
-endsection  
+@endsection  
 ```
 <br>
 
