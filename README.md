@@ -87,7 +87,7 @@ Télécharger l'outil *sail* par *composer*
 
 Pour utiliser *composer* et télécharger la bibliothèque pour retrouver la fonction *sail* taper dans le terminal ubuntu la commande   
 ```sh
-docker run --rm --interactive --tty \--volume $PWD:/app \composer install  
+docker run --rm --interactive --tty --volume $PWD:/app composer install  
 ```
 Création des *models* avec les fichiers *migration* et *controllers* utiliser la commande *artisan* dans un terminal  
 
