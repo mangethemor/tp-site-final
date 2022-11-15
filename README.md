@@ -17,7 +17,7 @@ Daouda et Hadj
 ***
 ### Installation LARAVEL (côté chef de projet)
 
-Pour installer LARAVEL ouvrir un terminal linux, où l'on peut entrer les commandes suivantes :  
+Pour installer LARAVEL ouvrir un terminal Linux, où l'on peut entrer les commandes suivantes :  
 ```sh
 curl -s https://laravel.build/example-app | bash
 ```
