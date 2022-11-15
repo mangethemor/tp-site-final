@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-
 <body>
+
 <header> <!-- A ne pas confondre avec <head> -->
         <h1>Work in progress</h1>
         <p>
@@ -10,7 +10,7 @@
     </header>
     <ul id="ligne">
         <li><a href="Planning.pdf" style="color:red;" target="_blank">Services</a></li> 
-        <li><a href="work.html" style="color:red;" target="_self">Tarifs</a></li> 
+        <li><a href="{{ asset('tarifs') }}" style="color:red;" target="_self">Tarifs</a></li> 
         <li><a href="mailto:email@example.com" style="color:red;" target="_blank">Contact</a></li>
         </ul>
         <div class="center">
@@ -18,6 +18,6 @@
         </div>
         <center>©3iSystem2022 </center>
     </body>
-
+    @endsection
     
     
