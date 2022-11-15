@@ -4,7 +4,7 @@
 ## Rôle de chacun dans le projet
 
 ### Chef de projet  
-Gregoire
+Grégoire
 
 ### Equipe back-office  
 Tifaine et Athithyan
