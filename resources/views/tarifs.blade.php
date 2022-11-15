@@ -1,9 +1,9 @@
-@extends('layouts.app')
-@section('content')
+
 <body>
 
 <header> <!-- A ne pas confondre avec <head> -->
-        <h1>Work in progress</h1>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">    
+    <h1>Work in progress</h1>
         <p>
             <a href="{{ asset('/') }}" style="color:red;" target="_self">Return to website</a>
         </p>
@@ -18,6 +18,6 @@
         </div>
         <center>©3iSystem2022 </center>
     </body>
-    @endsection
+
     
     
