@@ -30,7 +30,7 @@ cd example-app
 cette commande permet de lancer LARAVEL (-d pour le lancer en arrière plan)
 
 Gestion de projet par GitHub (côté back-office et front-end)
-Accepter l'invitation du projet *site_final* sur Github 
+Accepter l'invitation du projet *tp_site_final* sur Github 
 
 
 ### Creation du projet (côté chef de projet)
@@ -56,7 +56,7 @@ depuis un terminal taper
 cd Desktop/
 git clone https://github.com/nom_utilisateur_Git/nom_repository.git
 ```
-cd Desktop, pour le placer sur le bureau. Si le colaborateurs veut le placer autrepart cette commande est à adapter selon le chemin
+cd Desktop, pour le placer sur le bureau. Si le collaborateurs veut le placer autrepart (cette commande est à adapter selon le chemin).
 
 Pour créer une branche et ainsi travailler dans un environnement sans risquer d'impacter la branche principale le collaborateur devra taper  
 ```sh
@@ -83,13 +83,13 @@ git add -A
 git commit -m 'message'
 git push
 ``` 
-Télécharger l'outil *sail up* par *composer*  
+Télécharger l'outil *sail* par *composer*  
 
-Pour utiliser *composer* et télécharger la bibliothèque pour retrouver la fonction *sail up* taper dans le terminal ubuntu la commande   
+Pour utiliser *composer* et télécharger la bibliothèque pour retrouver la fonction *sail* taper dans le terminal ubuntu la commande   
 ```sh
 docker run --rm --interactive --tty \--volume $PWD:/app \composer install  
 ```
-Création des *models* avec les fichiers  *migration* et *controllers* utiliser la commande *artisan* dans un terminal  
+Création des *models* avec les fichiers *migration* et *controllers* utiliser la commande *artisan* dans un terminal  
 
 ```sh
 ./vendor/bin/sail up -d   
@@ -110,28 +110,38 @@ Créer un fichier *.env* dans la racine du dossier puis faire un copier coller d
 
 #### Côté back-office
 -----
-1- Adapter le code html pour créer un blog minimaliste  
+1- Créer une branche back-end afin d'isoler le travail en back-end et la branche main (en production)  
+```sh
+git branch back-end
+``` 
+
+2- Adapter le code html pour créer un blog minimaliste  
 avec *models*, *migrations*, *controllers* pour adapter le projet à un schéma de bdd  
 
-2- Créer un système d'authentification pour le site  
+3- Créer un système d'authentification pour le site  
 Par la commande *breeze*   
 <br>
 
 #### Côté front-end
 -----
-1- Creation des fichiers :  
+1- Créer une branche front-end afin d'isoler le travail en front-end et la branche main (en production)  
+```sh
+git branch front-end
+``` 
+
+2- Création des fichiers :  
 . welcome.blade.php  
 . tarifs.blade.php  
 . head.blade.php  
 . contact.blade.php  
 
-2- Modification du fichiers web.php qui est dans /routes/web.php  
+3- Modification du fichiers web.php qui est dans /routes/web.php  
 
-3- création d'un dossier layouts  
+4- Création d'un dossier layouts  
 
-4- création et configuration du fichiers app.blade.php qui est dans layouts/blade.php 
+5- Création et configuration du fichiers app.blade.php qui est dans layouts/blade.php 
 
-5- configuration du fichier *style.css* dans */public/css/style.css*
+6- Configuration du fichier *style.css* dans */public/css/style.css*
 
 
 ### Les difficultés rencontrées et solutions apportées
@@ -139,14 +149,14 @@ Par la commande *breeze*
 
 #### Côté back-office
 -----
-difficulté à faire passer la commande *sail*. Résolu en mettant un alias qui pointe vers le fichier afin d'appeler directement avec sail au lieu de passer par *./vendor*
+Difficulté à faire passer la commande *sail*. Résolu en mettant un alias qui pointe vers le fichier sail afin d'utiliser la fonction *sail* à l'instar de *./vendor/bin/sail*
 
 <br>
 
 #### Côté front-end  
 ----- 
 Problème de compatibilité de version de wsl. Solutions update de la version 1 à la version 2   
-Probleme avec la gestion des contenair, il fallait rajouter au debut et a la fin de chaque section ce code :  
+Problème avec la gestion des contenairs, il fallait rajouter au début et à la fin de chaque section ce code :  
 ```sh
 extends('layouts.app')  
 section('content')  
