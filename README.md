@@ -21,13 +21,13 @@ Pour installer LARAVEL ouvrir un terminal Linux, où l'on peut entrer les comman
 ```sh
 curl -s https://laravel.build/example-app | bash
 ```
-cette commande avec 'example-app' au nom du fichier que vous souhaitez  
+Remplacer 'example-app' par le nom du projet, ici : tp-site-final 
 
 ```sh
 cd example-app  
 ./vendor/bin/sail up -d
 ```
-cette commande permet de lancer LARAVEL (-d pour le lancer en arrière plan)
+Cette commande permet de lancer LARAVEL (-d pour le lancer en arrière plan)
 
 Gestion de projet par GitHub (côté back-office et front-end)
 Accepter l'invitation du projet *tp_site_final* sur Github 
@@ -85,7 +85,7 @@ git push
 ``` 
 Télécharger l'outil *sail* par *composer*  
 
-Pour utiliser *composer* et télécharger la bibliothèque pour retrouver la fonction *sail* taper dans le terminal ubuntu la commande   
+Pour utiliser *composer* et télécharger la bibliothèque contenant la fonction *sail*, taper dans le terminal ubuntu la commande   
 ```sh
 docker run --rm --interactive --tty --volume $PWD:/app composer install  
 ```
@@ -178,7 +178,7 @@ Erreur sur le système d'authentification, résolue par relecture des fichiers d
 #### Côté front-end  
 ----- 
 Problème de compatibilité de version de wsl. Solutions update de la version 1 à la version 2   
-Problème avec la gestion des contenairs, il fallait rajouter au début et à la fin de chaque section ce code :  
+Problème avec la gestion des containers, il fallait rajouter au début et à la fin de chaque section ce code :  
 ```sh
 @extends('layouts.app')  
 @section('content')  
